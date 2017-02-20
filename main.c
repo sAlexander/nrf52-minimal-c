@@ -36,6 +36,11 @@
 #define LED_2          18
 #define LED_3          19
 #define LED_4          20
+
+#define SET_PTR (*((volatile unsigned long*) (P0_BASE + SET_OFFSET)))
+#define CLR_PTR (*((volatile unsigned long*) (P0_BASE + CLR_OFFSET)))
+#define LED_1_PIN_CNF_PTR  (*((volatile unsigned long*) (P0_BASE + PIN_CNF_OFFSET + LED_1 * 4)))
+
         
 __asm__(".word 0x20001000");
 __asm__(".word main");
@@ -43,29 +48,19 @@ int main() {
 
 		volatile unsigned long dir = 1; // Output
 		volatile unsigned long input = 1; // Disconnect
-		volatile unsigned long pull = 0; // No pull
-		volatile unsigned long drive = 0; // S0S1
-		volatile unsigned long sense = 0; // No Sense
 
 		volatile unsigned long cfg = dir
-		    | input << 1
-		    | pull  << 2
-		    | drive << 8
-		    | sense << 16;
-
-		volatile unsigned long* led_1_cfg_ptr = (*((volatile unsigned long*)(P0_BASE + PIN_CNF_OFFSET + LED_1 * 4)));
-		volatile unsigned long* set_ptr = (*((volatile unsigned long*)(P0_BASE + SET_OFFSET)));
-		volatile unsigned long* clr_ptr = (*((volatile unsigned long*)(P0_BASE + CLR_OFFSET)));
+		    | input << 1;
 		
-		led_1_cfg_ptr = cfg;
+		LED_1_PIN_CNF_PTR = cfg;
 
         unsigned int c = 0;
         
         while(1) {
-                set_ptr = (1 << LED_1);
-                for(c = 0; c < 100000; c++);
-                clr_ptr = (1 << LED_1);
-                for(c = 0; c < 100000; c++);
+                SET_PTR = (1 << LED_1);
+                for(c = 0; c < 1000000; c++);
+                CLR_PTR = (1 << LED_1);
+                for(c = 0; c < 1000000; c++);
         }
                 
 } 
