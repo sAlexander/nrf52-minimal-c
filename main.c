@@ -9,9 +9,6 @@
 
 // Development kit specific values.
 #define LED_1 17
-#define LED_2 18
-#define LED_3 19
-#define LED_4 20
 
 #define SET_PTR (*((volatile unsigned long*) (P0_BASE + SET_OFFSET)))
 #define CLR_PTR (*((volatile unsigned long*) (P0_BASE + CLR_OFFSET)))
