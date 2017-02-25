@@ -77,12 +77,12 @@ With these, we have everything we'll need to blink some lights!
 // Development kit specific values.
 #define LED_1 17
 
-
 // Defined in "GPIO" for the nrf52.
 #define CFG_MODE_ON 3
 #define SET_PTR (*((volatile unsigned long*) (0x50000000 + 0x508)))
 #define CLR_PTR (*((volatile unsigned long*) (0x50000000 + 0x50C)))
-#define LED_1_PIN_CNF_PTR  (*((volatile unsigned long*) (0x50000000 + 0x700 + LED_1 * 4)))
+#define LED_1_PIN_CNF_PTR  (*((volatile unsigned long*) \
+			(0x50000000 + 0x700 + LED_1 * 4)))
         
 __asm__(".word 0x20001000");
 __asm__(".word main");
