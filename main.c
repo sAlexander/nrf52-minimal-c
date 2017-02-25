@@ -1,18 +1,12 @@
-// Defined in "Memory Layout" for the nrf52.
-#define P0_BASE 0x50000000
-
-// Defined in "GPIO" for the nrf52.
-#define SET_OFFSET 0x508
-#define CLR_OFFSET 0x50C
-#define PIN_CNF_OFFSET 0x700
-#define CFG_MODE_ON 3
-
 // Development kit specific values.
 #define LED_1 17
 
-#define SET_PTR (*((volatile unsigned long*) (P0_BASE + SET_OFFSET)))
-#define CLR_PTR (*((volatile unsigned long*) (P0_BASE + CLR_OFFSET)))
-#define LED_1_PIN_CNF_PTR  (*((volatile unsigned long*) (P0_BASE + PIN_CNF_OFFSET + LED_1 * 4)))
+
+// Defined in "GPIO" for the nrf52.
+#define CFG_MODE_ON 3
+#define SET_PTR (*((volatile unsigned long*) (0x50000000 + 0x508)))
+#define CLR_PTR (*((volatile unsigned long*) (0x50000000 + 0x50C)))
+#define LED_1_PIN_CNF_PTR  (*((volatile unsigned long*) (0x50000000 + 0x700 + LED_1 * 4)))
         
 __asm__(".word 0x20001000");
 __asm__(".word main");
