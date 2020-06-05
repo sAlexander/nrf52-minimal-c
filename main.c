@@ -1,6 +1,9 @@
-// Development kit specific values.
-#define LED_1 17
+// Blinky in half a dozen lines of code.
 
+// GPIO pin for the LED.
+// This value will vary between development boards!
+// Value below is for nRF52840-DK.
+#define LED_1 13
 
 // Defined in "GPIO" for the nrf52.
 #define CFG_MODE_ON 3
