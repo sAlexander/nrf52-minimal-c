@@ -8,7 +8,7 @@ layout: default
 # microBlinky for the NRF52
 ## Blinky in two dozen lines of code
 
-(You can find all of the code, build commands and a segger flashing utility at [https://github.com/sAlexander/nrf52-minimal-c].
+Note: You can find all of the code, build commands and a segger flashing utility at [https://github.com/sAlexander/nrf52-minimal-c].
 
 The nrf52 is a great chip: BLE functionality in a small package at a low cost. It's power requirements are low and it's processor is powerful. And the development kit is a great platform for learning.
 
