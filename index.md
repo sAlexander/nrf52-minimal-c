@@ -8,6 +8,8 @@ layout: default
 # microBlinky for the NRF52
 ## Blinky in two dozen lines of code
 
+(You can find all of the code, build commands and a segger flashing utility at [https://github.com/sAlexander/nrf52-minimal-c].
+
 The nrf52 is a great chip: BLE functionality in a small package at a low cost. It's power requirements are low and it's processor is powerful. And the development kit is a great platform for learning.
 
 However, the nrf52 is also quite complex. It's based off the ARM Cortex M4, includes a function-packed but complex softdevice, and has a thick reference guide dedicated to describing its hardware functionality.
@@ -20,7 +22,7 @@ In the final blinky executable, only a handful of these files are actually neede
 
 ## Inspiration from the STM32
 
-In my search for enlightenment, I came across a great resource for the [STM32](https://en.wikipedia.org/wiki/STM32) at [pramode.net]. The author put together a very interesting piece on creating a [minimal C program for the STM32](http://pramode.net/fosstronics/minimal-c-program.txt). Given that both the STM32 and the NRF52 share a common heritage (Cortex M series), I was hopeful that some of the ideas could be shared.
+In my search for enlightenment, I came across a great resource for the [STM32](https://en.wikipedia.org/wiki/STM32) at [http://pramode.net]. The author put together a very interesting piece on creating a [minimal C program for the STM32](http://pramode.net/fosstronics/minimal-c-program.txt). Given that both the STM32 and the NRF52 share a common heritage (Cortex M series), I was hopeful that some of the ideas could be shared.
 
 (Side note: I would highly recommend reading [all of the author's notes](http://pramode.net/fosstronics) on "fosstronics")
 
