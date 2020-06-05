@@ -16,15 +16,12 @@
 title: NRF52 Minimal C
 description: > # this means to ignore newlines until "baseurl:"
     microBlinky for the NRF52
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "salexander.githubio/nrf52-minimal-c" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/nrf52-minimal-c" # the subpath of your site, e.g. /blog
 github_username:  salexander
 
 # Build settings
 markdown: kramdown
 theme: minima
-gems:
-  - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
